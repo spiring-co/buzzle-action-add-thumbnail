@@ -1,0 +1,24 @@
+{
+  "name": "buzzle-action-add-audio",
+  "version": "1.0.6",
+  "description": "Action Module for adding audio to encoded video using nexrender",
+  "main": "index.js",
+  "scripts": {
+    "test": "node sandbox.js"
+  },
+  "keywords": [
+    "nexrender",
+    "video",
+    "watermark"
+  ],
+  "author": "spiring",
+  "license": "ISC",
+  "dependencies": {
+    "ffprobe": "^1.1.2",
+    "ffprobe-static": "^3.0.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "node-fetch": "^2.6.0",
+    "node-fetch-progress": "^1.0.2",
+    "sharp": "^0.27.2"
+  }
+}
