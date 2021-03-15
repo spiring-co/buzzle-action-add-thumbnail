@@ -155,8 +155,8 @@ module.exports = (job, settings, { input, thumbnail, output, thumbnailDuration =
 
 
       }
-    }).catch(e => {
-      settings.logger.log(e.message)
+    }).catch(err => {
+      settings.logger.log(err.message)
       onComplete()
       reject(err);
     })
