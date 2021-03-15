@@ -137,7 +137,7 @@ module.exports = (job, settings, { input, thumbnail, output, thumbnailDuration =
           .inputOptions([`-t ${thumbnailDuration}`])
           .input(input)
           .inputOptions(['-vcodec h264', '-acodec mp3'])
-          .complexFilter('[0:0] [1:0] concat=n=2:v=1:a=0')
+          .complexFilter('concat=n=2:v=1:a=0')
           .on("error", function (err, stdout, stderr) {
             settings.logger.log("joining thumbnail with video failed: " + err.message);
             onComplete()
