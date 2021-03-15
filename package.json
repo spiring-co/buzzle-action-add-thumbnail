@@ -19,6 +19,7 @@
     "fluent-ffmpeg": "^2.1.2",
     "node-fetch": "^2.6.0",
     "node-fetch-progress": "^1.0.2",
-    "sharp": "^0.27.2"
+    "sharp": "^0.27.2",
+    "stream": "0.0.2"
   }
 }
