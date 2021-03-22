@@ -104,7 +104,7 @@ module.exports = (job, settings, { input, thumbnail, output, thumbnailDuration =
           .input(thumbnail)
           .inputOptions([`-t ${thumbnailDuration}`])
           .input(input)
-          .inputOptions(['-vcodec h264'])
+          .inputOptions(['-vcodec h264', '-acodec aac'])
           .outputOptions([`-r ${videoDetails.r_frame_rate || 24}`])
           .complexFilter('concat=n=2:v=1:a=0')
           .on("error", function (err, stdout, stderr) {
@@ -138,7 +138,7 @@ module.exports = (job, settings, { input, thumbnail, output, thumbnailDuration =
           .input(Readable.from(thumbnail))
           .inputOptions([`-t ${thumbnailDuration}`])
           .input(input)
-          .inputOptions(['-vcodec h264'])
+          .inputOptions(['-vcodec h264', '-acodec aac'])
           .outputOptions([`-r ${videoDetails.r_frame_rate || 24}`])
           .complexFilter('concat=n=2:v=1:a=0')
           .on("error", function (err, stdout, stderr) {
