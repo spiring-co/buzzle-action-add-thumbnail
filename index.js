@@ -105,7 +105,7 @@ module.exports = (job, settings, { input, thumbnail, output, thumbnailDuration =
           .inputOptions([`-t ${thumbnailDuration}`])
           .input(input)
           .inputOptions(['-vcodec h264', '-acodec aac'])
-          .outputOptions([`-r ${videoDetails.r_frame_rate || 24}`])
+          .outputOptions([`-r ${videoDetails.r_frame_rate || 24}`, '-max_muxing_queue_size 1024'])
           .complexFilter('concat=n=2:v=1:a=0')
           .on("error", function (err, stdout, stderr) {
             console.log("join thumbnail video failed: " + err.message);
@@ -139,7 +139,7 @@ module.exports = (job, settings, { input, thumbnail, output, thumbnailDuration =
           .inputOptions([`-t ${thumbnailDuration}`])
           .input(input)
           .inputOptions(['-vcodec h264', '-acodec aac'])
-          .outputOptions([`-r ${videoDetails.r_frame_rate || 24}`])
+          .outputOptions([`-r ${videoDetails.r_frame_rate || 24}`, '-max_muxing_queue_size 1024'])
           .complexFilter('concat=n=2:v=1:a=0')
           .on("error", function (err, stdout, stderr) {
             settings.logger.log("joining thumbnail with video failed: " + err.message);
