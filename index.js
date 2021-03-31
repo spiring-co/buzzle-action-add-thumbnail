@@ -79,6 +79,7 @@ const getBufferFromImageUrl = async (url) => {
 
 module.exports = (job, settings, { input, thumbnail, output, thumbnailDuration = 1, onStart, onComplete }) => {
   onStart()
+  console.log("Starting action thumbnail...")
   return new Promise((resolve, reject) => {
     input = input || job.output;
     output = output || "output.mp4";
